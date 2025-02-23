@@ -45,12 +45,15 @@ The data is loaded and refreshed daily at **6 AM IST (Monday to Friday).**
 
 5. **Data Visualization in Looker Studio:**  
    - The data from **DTM tables** is joined with **Company and Date DWH tables** to form **blended data**.  
-   - The final dataset is used to create **two reports in Google Looker Studio**.  
+   - The final dataset is used to create **two reports in Google Looker Studio**.
+     ![image](https://github.com/user-attachments/assets/bbab37d5-8449-4b07-882d-bcbfbcd89d8b)
+     ![image](https://github.com/user-attachments/assets/3a5008f1-82f2-456e-b7f9-d9288803c0f2)
+
 
 6. **Data Archival:**  
    - A **Cloud Function** moves **daily incremental data** from the **raw folder** to the **archive folder** in **Google Cloud Storage**.  
 
----
+
 
 ## **Tools**  
 
