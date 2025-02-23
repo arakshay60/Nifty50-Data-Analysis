@@ -31,3 +31,5 @@ The data is loaded and refreshed daily at 6am IST from Monday to Friday
 
 5.The data from 2 DTM tables are joined with Company and Date DWH tables to form blended data in Looker Studio. This data is then used to create the 2 reports.
 
+6.Daily incremental data from the raw folder is transferred to the archive folder using cloud functions
+
