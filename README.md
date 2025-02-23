@@ -53,6 +53,9 @@ The data is loaded and refreshed daily at **6 AM IST (Monday to Friday).**
 6. **Data Archival:**  
    - A **Cloud Function** moves **daily incremental data** from the **raw folder** to the **archive folder** in **Google Cloud Storage**.  
 
+7. **Orchestration:**
+   - All these processes are orchestrated using Google workflows 
+     
 
 
 ## **Tools**  
