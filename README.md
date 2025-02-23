@@ -36,8 +36,13 @@ The data is loaded and refreshed daily at 6am IST from Monday to Friday
 Tools
 
 1.Orchestration: Google Workflows
+
 2.Data Ingestion (batch): Python, Google cloud function
+
 3.Staging: Google Cloud Storage
+
 4.Data Warehouse: Google BigQuery
+
 5.Transformations: Pyspark, SQL
+
 6.Visualization: Google Looker Studio
