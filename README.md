@@ -1,6 +1,7 @@
 # Nifty50 Data Analysis  
 
 **Project Link:** [Nifty50 Data Analysis](https://lookerstudio.google.com/u/1/reporting/bbafb746-adf8-4a30-b7ed-65a809c9215b/page/JVgvE)  
+(Data for 1 week and 1 month will be available when historical data within that timeframe gets loaded)
 
 ![image](https://github.com/user-attachments/assets/de03524d-97db-4567-a466-f9ed8e73b20c)
 
