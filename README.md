@@ -2,6 +2,12 @@
 
 **Project Link:** [Nifty50 Data Analysis](https://lookerstudio.google.com/u/1/reporting/bbafb746-adf8-4a30-b7ed-65a809c9215b/page/JVgvE)  
 
+![image](https://github.com/user-attachments/assets/de03524d-97db-4567-a466-f9ed8e73b20c)
+
+![image](https://github.com/user-attachments/assets/5f2dd03b-0b8f-43d6-8e23-fd91e7b01fbb)
+
+
+
 Welcome to the **Nifty50 Data Analysis** project. The objective of this project is to leverage the information of the top 50 stocks in **NIFTY**, calculate **price changes** and **buy-sell ratios**, and enable users to understand the current stock trends, including top gainers and losers within a specific timeframe.  
 
 The project fetches data using the **nsepython** library, applies transformations, stores the data in a **Data Warehouse (DWH)**, and presents findings on a **dashboard** as outlined in the architecture below.  
