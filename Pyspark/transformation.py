@@ -12,12 +12,7 @@ spark = SparkSession.builder \
 
 gcs_input_path = "gs://nsestock/raw/nifty50data_*.parquet"
 df = spark.read.parquet(gcs_input_path)
-# Create Date Dimension Table
-dim_date = df.select("date").distinct()
-dim_date = dim_date.withColumn("month_name", date_format(col("date"), "MMMM"))
-dim_date = dim_date.withColumn("day", date_format(col("date"), "d").cast("int"))
-dim_date = dim_date.withColumn("month", date_format(col("date"), "M").cast("int"))
-dim_date = dim_date.withColumn("year", date_format(col("date"), "yyyy").cast("int"))
+
 
 # Create Fact Table
 fact_table = df.select("symbol", "date", "previousClose", "open", "close", "buyQty", "sellQty")
@@ -42,11 +37,5 @@ dim_company.write \
     .mode("overwrite") \
     .save()
 
-dim_date.write \
-    .format("bigquery") \
-    .option("table", f"{bq_dataset}.date_staging") \
-    .option("temporaryGcsBucket", "nsestock")\
-    .mode("overwrite") \
-    .save()
 
 spark.stop()
