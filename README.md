@@ -27,18 +27,17 @@ The data is loaded and refreshed daily at **6 AM IST (Monday to Friday).**
 
 2. **Data Processing (BigQuery + PySpark):**  
    - The file is picked from **GCS**, and a **PySpark job** runs on **BigQuery** (using **Dataproc Serverless** in the background).  
-   - The data is divided into **three Spark DataFrames**:  
+   - The data is divided into **two Spark DataFrames**:  
      - **Company DataFrame**: Contains stock names, industries, and symbols.  
      - **Stock DataFrame**: Contains all stock KPIs and metrics.  
-     - **Date DataFrame**: Stores date-related information.  
-   - These DataFrames are loaded into **three staging tables** in **BigQuery**.  
+   - These DataFrames are loaded into **two staging tables** in **BigQuery**.  
 
    ![image](https://github.com/user-attachments/assets/5bb41a77-2594-45ca-8d34-8db0d97f9d48)  
    ![image](https://github.com/user-attachments/assets/45bf1bd8-33b5-4161-aef6-649547519cea)  
-   ![image](https://github.com/user-attachments/assets/97925e1a-46dd-4aa7-bca9-9e21f01aaa7f)  
 
 3. **Incremental Load to DWH:**  
-   - The data from **staging tables** is **incrementally merged** into the **three Data Warehouse (DWH) tables** using **SQL queries**.  
+   - The data from **staging tables** is **incrementally merged** into the **two Data Warehouse (DWH) tables** in BigQuery using **SQL queries**.
+   - For the date dimension, data is loaded from 01-01-2025 to 31-12-2030 using a single SQL query
 
 4. **Transformations & KPI Calculations:**  
    - The **DWH tables** undergo further transformations, and **KPIs** are created using **SQL**.  
@@ -51,7 +50,7 @@ The data is loaded and refreshed daily at **6 AM IST (Monday to Friday).**
    ![image](https://github.com/user-attachments/assets/1d807a9a-de0a-4624-82e6-4807809eccf9)  
 
 5. **Data Visualization in Looker Studio:**  
-   - The data from **DTM tables** is joined with **Company and Date DWH tables** to form **blended data**.  
+   - The data from **DTM tables** is joined with **Company and Date dimension tables** to form **blended data**.  
    - The final dataset is used to create **two reports in Google Looker Studio**.
      ![image](https://github.com/user-attachments/assets/bbab37d5-8449-4b07-882d-bcbfbcd89d8b)
      ![image](https://github.com/user-attachments/assets/3a5008f1-82f2-456e-b7f9-d9288803c0f2)
